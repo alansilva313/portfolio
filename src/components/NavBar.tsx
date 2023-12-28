@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LuMoonStar } from "react-icons/lu";
 import { FiAlignLeft, FiXCircle } from "react-icons/fi";
+import { useContext, useState, useEffect } from "react";
 import { FaInstagram, FaLinkedin, FaRegSun } from "react-icons/fa";
 import { ThemeContext } from "../context/Theme";
-import { useContext } from "react";
 
-const NavBar: React.FC = () => {
-  const [menu, setMenu] = useState('hidden' as const);
+export default function NavBar() {
+  const [menu, setMenu] = useState('hidden');
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [alterTheme, setAlterTheme] = useState('');
 
@@ -43,6 +42,4 @@ const NavBar: React.FC = () => {
       </nav>
     </div>
   );
-};
-
-export default NavBar;
+}

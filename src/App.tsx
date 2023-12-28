@@ -4,9 +4,8 @@ import { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from './context/Theme';
 
 function App() {
-  const themeContext = useContext(ThemeContext);
-  const theme = themeContext?.theme || "light";
-  const [alterTheme, setAlterTheme] = useState("");
+  const { theme } = useContext(ThemeContext);
+  const [alterTheme, setAlterTheme] = useState('');
 
   useEffect(() => {
     setAlterTheme(theme === "light" ? "bg-white" : "bg-black");
