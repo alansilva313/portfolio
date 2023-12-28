@@ -5,6 +5,7 @@ import ImgSilva from '../assets/images/alns.jpg';
 
 
 
+
 export default function Home() {
    const [tema, setTema] = useState('');
     const { theme } = useContext(ThemeContext);
@@ -17,7 +18,7 @@ export default function Home() {
   return (
  <div className={`${tema} mt-28`}>
        <div className="flex flex-col gap-4">
-<div className="flex flex-col items-start mb-7">
+<div className="flex flex-col items-start mb-7 gap-4">
           <img src={ImgSilva} alt="alan silva" className="rounded-full w-36 flex items-start"/>
 
         <h3 className="text-3xl font-mono"><strong>Alan Silva</strong></h3>

@@ -4,12 +4,14 @@ import { FiAlignLeft, FiXCircle } from "react-icons/fi";
 import { useContext, useState, useEffect } from "react";
 import { FaInstagram, FaLinkedin, FaRegSun } from "react-icons/fa";
 import { ThemeContext } from "../context/Theme";
+import { motion, useScroll } from "framer-motion"
 
 export default function NavBar() {
   const [menu, setMenu] = useState('hidden');
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [alterTheme, setAlterTheme] = useState('');
   const [alterBg, setAlterBg] = useState('');
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     if (theme === "light") {
@@ -29,6 +31,7 @@ export default function NavBar() {
 
   return (
     <div className={`w-full flex-col bg:flex bg:flex-row items-center fixed top-0 ${alterBg}`} >
+            <motion.div style={{ scaleX: scrollYProgress }}>    </motion.div>  
       <div className={`flex md:flex items-center justify-between gap-2 cursor-pointer text-3xl p-4 ${alterTheme}`}>
         <button onClick={handle} className="lg:hidden">
           <FiAlignLeft />
@@ -44,11 +47,12 @@ export default function NavBar() {
         <div onClick={handle} className="w-full p-4 text-3xl lg:hidden">
           <FiXCircle />
         </div>
-        <div className="w-full p-5 flex flex-col gap-4 lg:flex-row  lg:pl-96 lg:pr-96 items-center">
+        <div className="w-full p-5 flex flex-col gap-4 lg:flex-row text-3xl lg:pl-96 lg:pr-96 items-center">
           <Link to="/">Home</Link>
           <Link to="contact">Contatos</Link>
         </div>
       </nav>
+    
     </div>
   );
 }
