@@ -1,11 +1,12 @@
-import  { useContext, useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import { ThemeContext } from './context/Theme';
+import { useContext, useState, useEffect } from 'react';
+import { ThemeContext, ThemeContextProps } from './context/Theme';
 
 function App() {
-  const { theme } = useContext(ThemeContext);
-  const [alterTheme, setAlterTheme] = useState<string>('');
+  const themeContext = useContext(ThemeContext);
+  const theme: ThemeContextProps["theme"] = themeContext?.theme || "light";
+  const [alterTheme, setAlterTheme] = useState<"bg-white" | "bg-black">('');
 
   useEffect(() => {
     setAlterTheme(theme === "light" ? "bg-white" : "bg-black");
