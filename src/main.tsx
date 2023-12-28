@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home.tsx'
 import Contact from './routes/Contact.tsx'
 import ErrorPage from './routes/ErrorPage.tsx'
+import { ThemeProvider } from './context/Theme.tsx'
 
   const router = createBrowserRouter([
    {
@@ -28,6 +29,8 @@ import ErrorPage from './routes/ErrorPage.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <ThemeProvider>
    <RouterProvider router={router}/>
+   </ThemeProvider>
   </React.StrictMode>,
 )
