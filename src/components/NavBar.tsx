@@ -19,7 +19,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="w-full flex-col items-center">
+    <div className="w-full flex-col items-center fixed top-0">
       <div className={`flex lg:hidden md:flex items-center justify-between gap-2 cursor-pointer text-3xl p-4 ${alterTheme}`}>
         <button onClick={handle}>
           <FiAlignLeft />

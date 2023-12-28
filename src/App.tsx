@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <div className={`w-full ${alterTheme}`}>
+      <div className={`w-full h-screen ${alterTheme}`}>
         <NavBar />
         <div className='w-full p-10'>
           <Outlet />
