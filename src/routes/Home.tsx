@@ -14,7 +14,7 @@ export default function Home() {
 
 
   return (
- <div className={`${tema} mt-10`}>
+ <div className={`${tema} mt-28`}>
        <div className="flex flex-col gap-4">
 <div>
           <img src="" alt="alan silva" />

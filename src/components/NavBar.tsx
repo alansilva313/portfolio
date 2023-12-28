@@ -9,23 +9,32 @@ export default function NavBar() {
   const [menu, setMenu] = useState('hidden');
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [alterTheme, setAlterTheme] = useState('');
+  const [alterBg, setAlterBg] = useState('');
 
   useEffect(() => {
-    setAlterTheme(theme === "light" ? "text-black" : "text-white");
+    if (theme === "light") {
+      setAlterTheme("text-black");
+      setAlterBg("bg-white");
+    } else if (theme === "dark") {
+      setAlterTheme("text-white");
+      setAlterBg("bg-black");
+    }
   }, [theme]);
+
+
 
   const handle = () => {
     setMenu((prevMenu) => (prevMenu === 'hidden' ? 'visible' : 'hidden'));
   };
 
   return (
-    <div className="w-full flex-col items-center fixed top-0">
-      <div className={`flex lg:hidden md:flex items-center justify-between gap-2 cursor-pointer text-3xl p-4 ${alterTheme}`}>
-        <button onClick={handle}>
+    <div className={`w-full flex-col bg:flex bg:flex-row items-center fixed top-0 ${alterBg}`} >
+      <div className={`flex md:flex items-center justify-between gap-2 cursor-pointer text-3xl p-4 ${alterTheme}`}>
+        <button onClick={handle} className="lg:hidden">
           <FiAlignLeft />
         </button>
 
-        <div className={`flex items-center gap-2 lg:hidden ${alterTheme}`}>
+        <div className={`flex items-center gap-2  ${alterTheme}`}>
           {theme === 'dark' ? <FaRegSun onClick={toggleTheme} /> : <LuMoonStar onClick={toggleTheme} />}
           <FaInstagram className={alterTheme} />
           <FaLinkedin />
@@ -35,7 +44,7 @@ export default function NavBar() {
         <div onClick={handle} className="w-full p-4 text-3xl lg:hidden">
           <FiXCircle />
         </div>
-        <div className="w-full p-5 flex flex-col gap-4">
+        <div className="w-full p-5 flex flex-col gap-4 lg:flex-row  lg:pl-96 lg:pr-96 items-center">
           <Link to="/">Home</Link>
           <Link to="contact">Contatos</Link>
         </div>

@@ -36,7 +36,7 @@ export default function Secao1() {
   ];
 
   return (
-    <div className="mt-20">
+    <div className="mt-28">
       <h3 className="mb-4 text-2xl">Minhas Habilidades</h3>
 
       <div className="w-full flex flex-col gap-4 ">
