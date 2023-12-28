@@ -1,8 +1,17 @@
-import { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, ReactNode } from "react";
 
-const ThemeContext = createContext({});
+interface ThemeContextProps {
+  theme: string;
+  toggleTheme: () => void;
+}
 
-const ThemeProvider = ({ children }: any) => {
+const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
+const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -16,7 +25,7 @@ const ThemeProvider = ({ children }: any) => {
   );
 };
 
-const useTheme = () => {
+const useTheme = (): ThemeContextProps => {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error("useTheme must be used within a ThemeProvider");
