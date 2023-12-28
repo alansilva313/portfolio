@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import  { useContext, useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import { ThemeContext } from './context/Theme';
