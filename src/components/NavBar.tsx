@@ -6,14 +6,10 @@ import { FaInstagram, FaLinkedin, FaRegSun } from "react-icons/fa";
 import { ThemeContext } from "../context/Theme";
 import { useContext } from "react";
 
-interface NavBarProps {
-  // Adicione quaisquer props necessárias aqui
-}
-
-const NavBar: React.FC<NavBarProps> = () => {
-  const [menu, setMenu] = useState<'hidden' | 'visible'>('hidden');
+const NavBar: React.FC = () => {
+  const [menu, setMenu] = useState('hidden' as const);
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [alterTheme, setAlterTheme] = useState<'text-black' | 'text-white'>('');
+  const [alterTheme, setAlterTheme] = useState('');
 
   useEffect(() => {
     setAlterTheme(theme === "light" ? "text-black" : "text-white");

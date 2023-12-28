@@ -1,7 +1,9 @@
 import React, { createContext, useState, useContext, ReactNode } from "react";
 
+type Theme = "light" | "dark";
+
 interface ThemeContextProps {
-  theme: string;
+  theme: Theme;
   toggleTheme: () => void;
 }
 
@@ -12,7 +14,7 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState<Theme>("light");
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
