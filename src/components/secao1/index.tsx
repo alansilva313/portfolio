@@ -1,6 +1,14 @@
+import { useContext, useEffect, useState } from "react";
 import { FaNode, FaReact  } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
+import { ThemeContext } from "../../context/Theme";
 export default function Secao1() {
+    const { theme } = useContext(ThemeContext)
+    const [temaBg, setTemaBg] = useState('');
+
+    useEffect(() => {
+        theme === 'dark' ? setTemaBg('bg-zinc-600') : setTemaBg('bg-white');
+    })
 
 
   type Habilidades = {
@@ -16,7 +24,7 @@ export default function Secao1() {
       description: "Teste para Node JS",
     },
     {
-        icone: <RiJavascriptFill className="text-yellow-400"/>,
+        icone: <RiJavascriptFill className="text-yellow-400 "/>,
       name: "JavaScript",
       description: "Teste para JavaScript",
     },
@@ -34,7 +42,7 @@ export default function Secao1() {
       <div className="w-full flex flex-col gap-4 ">
      
           {habilidades.map((item: Habilidades, index: number) => (
-            <div key={index} className="p-4 rounded w-full flex items-center gap-2 bg-white border">
+            <div key={index} className={`p-4 rounded w-full flex items-center gap-2 ${temaBg} border`}>
                 <div className="text-2xl">
                     {item.icone}
                 </div>

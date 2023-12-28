@@ -1,10 +1,20 @@
+import { useContext, useEffect, useState } from "react";
 import Secao1 from "../components/secao1";
+import { ThemeContext } from "../context/Theme";
 
 
 
 export default function Home() {
+   const [tema, setTema] = useState('');
+    const { theme } = useContext(ThemeContext);
+
+   useEffect(() => {
+     theme === 'dark' ? setTema('text-white') : setTema('text-black')
+   })
+
+
   return (
- <div className="mt-10">
+ <div className={`${tema} mt-10`}>
        <div className="flex flex-col gap-4">
 <div>
           <img src="" alt="alan silva" />
