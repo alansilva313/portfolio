@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { LuMoonStar } from "react-icons/lu";
 import { FiAlignLeft, FiXCircle } from "react-icons/fi";
 import { useContext, useState, useEffect } from "react";
-import { FaInstagram, FaLinkedin, FaRegSun } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GoSun } from "react-icons/go";
 import { ThemeContext } from "../context/Theme";
 import { motion, useScroll } from "framer-motion"
