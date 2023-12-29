@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Secao1 from "../components/secao1";
 import { ThemeContext } from "../context/Theme";
 import ImgSilva from '../assets/images/alns.jpg';
+import Secao2 from "../components/secao2";
 
 
 
@@ -27,11 +28,11 @@ export default function Home() {
      idade. Meu foco principal é o desenvolvimento Backend, mas também trago
       experiência sólida em projetos FrontEnd. Sou apaixonado por transformar ideias em
        soluções tecnológicas e estou constantemente em busca de desafios que impulsionem 
-       meu crescimento profissional. Vamos criar algo incrível juntos! 🚀🖥️</p>
+       meu crescimento profissional.  🚀🖥️</p>
 
        
     </div>
-
+   <Secao2 />
     <Secao1 />
  </div>
   )

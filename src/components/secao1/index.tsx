@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { FaNode, FaReact  } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 import { ThemeContext } from "../../context/Theme";
+import Projetos from "../projetos/Projetos";
 export default function Secao1() {
     const { theme } = useContext(ThemeContext)
     const [temaBg, setTemaBg] = useState('');
@@ -54,6 +55,8 @@ export default function Secao1() {
           ))}
   
       </div>
+
+      <Projetos />
     </div>
   );
 }

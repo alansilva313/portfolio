@@ -3,6 +3,7 @@ import { LuMoonStar } from "react-icons/lu";
 import { FiAlignLeft, FiXCircle } from "react-icons/fi";
 import { useContext, useState, useEffect } from "react";
 import { FaInstagram, FaLinkedin, FaRegSun } from "react-icons/fa";
+import { GoSun } from "react-icons/go";
 import { ThemeContext } from "../context/Theme";
 import { motion, useScroll } from "framer-motion"
 
@@ -38,20 +39,21 @@ export default function NavBar() {
         </button>
 
         <div className={`flex items-center gap-2  ${alterTheme}`}>
-          {theme === 'dark' ? <FaRegSun onClick={toggleTheme} /> : <LuMoonStar onClick={toggleTheme} />}
+          {theme === 'dark' ? <GoSun onClick={toggleTheme} /> : <LuMoonStar onClick={toggleTheme} />}
           <FaInstagram className={alterTheme} />
           <FaLinkedin />
         </div>
       </div>
-      <nav className={`${menu} ${alterTheme} w-full top-0 h-screen lg:h-0 fixed bg-orange-400 transition-all ease-in-out lg:flex lg:gap-4`}>
+      <nav className={`${menu} ${alterTheme} w-full top-0 h-screen lg:h-0 fixed bg-slate-800 transition-all ease-in-out lg:flex lg:gap-4`}>
         <div onClick={handle} className="w-full p-4 text-3xl lg:hidden">
           <FiXCircle />
         </div>
-        <div className="w-full p-5 flex flex-col gap-4 lg:flex-row text-3xl lg:pl-96 lg:pr-96 items-center">
+        <div className="w-full p-5 flex flex-col gap-4 lg:flex-row text-3xl lg:pl-96 lg:pr-96 items-center text-white">
           <Link to="/">Home</Link>
-          <Link to="contact">Contatos</Link>
+        
         </div>
       </nav>
+
     
     </div>
   );
